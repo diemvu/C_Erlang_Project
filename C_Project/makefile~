@@ -1,0 +1,9 @@
+pr1 : driver.o processTable.o partitionTable.o
+	gcc -o driver.o processTable.o partitionTable.o
+
+driver.o : driver.c processTable.h partitionTable.h
+	gcc - c driver.c
+processTable.o : processTable.h processTable.c
+	gcc -c processTable.c
+partitionTable.o : partitionTable.h partitionTable.c
+	gcc -c partitionTable.c
